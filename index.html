@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sensibilisation au harcèlement moral, aux agissements sexistes et au harcèlement sexuel — APF France handicap</title>
+<meta name="description" content="Formation de sensibilisation en classe virtuelle — reconnaître, prévenir et relayer les situations de harcèlement moral, d'agissements sexistes et de harcèlement sexuel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#182430;
+    --ink-soft:#3d4c59;
+    --bg:#f6f8f8;
+    --paper:#ffffff;
+    --line:#dce3e2;
+    --teal:#215c52;
+    --teal-deep:#153b34;
+    --teal-tint:#e4efec;
+    --amber:#a9682f;
+    --amber-tint:#f3e6d8;
+    --focus:#0b5fff;
+    --radius:14px;
+    --maxw:960px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Source Sans 3', Arial, sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', Georgia, serif;
+    color:var(--teal-deep);
+    line-height:1.15;
+    margin:0 0 .5em 0;
+  }
+  a{color:var(--teal-deep);}
+  a:focus-visible, button:focus-visible, summary:focus-visible{
+    outline:3px solid var(--focus);
+    outline-offset:2px;
+  }
+  img{max-width:100%; display:block;}
+
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+
+  /* Skip link for accessibility */
+  .skip-link{
+    position:absolute; left:-999px; top:0;
+    background:var(--teal-deep); color:#fff; padding:12px 20px;
+    z-index:100; border-radius:0 0 8px 0;
+  }
+  .skip-link:focus{left:0;}
+
+  /* ===== Header ===== */
+  header.hero{
+    background:linear-gradient(180deg, var(--teal-deep) 0%, var(--teal) 100%);
+    color:#fff;
+    padding:56px 0 64px;
+  }
+  .hero-top{
+    display:flex; align-items:center; gap:16px; margin-bottom:40px;
+  }
+  .hero-top img.logo{
+    height:52px; width:auto; background:#fff; border-radius:8px; padding:6px 10px;
+  }
+  .hero-top .org-name{
+    font-family:'Fraunces', serif; font-size:1rem; letter-spacing:.02em; color:#eaf3f1;
+  }
+  .hero h1{
+    color:#fff; font-size:clamp(1.7rem, 4vw, 2.5rem); font-weight:600;
+    max-width:22ch;
+  }
+  .hero .tagline{
+    color:#dcece8; font-size:1.15rem; max-width:52ch; margin-top:14px;
+  }
+  .hero-meta{
+    display:flex; flex-wrap:wrap; gap:12px; margin-top:32px;
+  }
+  .pill{
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.35);
+    color:#fff;
+    padding:8px 16px; border-radius:999px; font-size:.92rem;
+    display:flex; align-items:center; gap:8px;
+  }
+  .pill svg{width:16px; height:16px; flex-shrink:0;}
+
+  /* ===== Section shell ===== */
+  section{padding:56px 0;}
+  section .eyebrow{
+    text-transform:uppercase; letter-spacing:.12em; font-size:.78rem;
+    color:var(--amber); font-weight:600; margin-bottom:10px;
+  }
+  section > .wrap > h2{font-size:clamp(1.4rem, 3vw, 1.9rem);}
+  .lead{color:var(--ink-soft); max-width:60ch; margin-bottom:32px;}
+
+  /* ===== Intention callout ===== */
+  .intention{
+    background:var(--teal-tint);
+    border-left:4px solid var(--teal);
+    border-radius:0 var(--radius) var(--radius) 0;
+    padding:20px 24px;
+    font-family:'Fraunces', serif;
+    font-size:1.15rem;
+    color:var(--teal-deep);
+    max-width:60ch;
+  }
+
+  /* ===== Programme accordion ===== */
+  .programme-list{
+    border-top:1px solid var(--line);
+  }
+  .prog-item{
+    border-bottom:1px solid var(--line);
+  }
+  .prog-item summary{
+    cursor:pointer;
+    list-style:none;
+    padding:20px 4px;
+    display:grid;
+    grid-template-columns:44px 1fr auto auto;
+    align-items:center;
+    gap:16px;
+  }
+  .prog-item summary::-webkit-details-marker{display:none;}
+  .prog-num{
+    font-family:'Fraunces', serif; font-weight:500; font-size:1.05rem;
+    color:var(--amber);
+  }
+  .prog-title{font-weight:600; color:var(--teal-deep); font-size:1.05rem;}
+  .prog-duration{
+    font-size:.85rem; color:var(--ink-soft); white-space:nowrap;
+    background:var(--teal-tint); padding:4px 10px; border-radius:999px;
+  }
+  .chevron{
+    width:14px; height:14px; border-right:2px solid var(--teal); border-bottom:2px solid var(--teal);
+    transform:rotate(45deg); transition:transform .2s ease; margin-right:6px;
+  }
+  .prog-item[open] .chevron{transform:rotate(-135deg);}
+  .prog-body{
+    padding:0 4px 24px 60px;
+    color:var(--ink-soft);
+    max-width:65ch;
+  }
+  .prog-body .anim-tag{
+    display:inline-block; margin-top:10px; font-size:.85rem;
+    color:var(--teal-deep); background:var(--amber-tint); padding:4px 10px; border-radius:8px;
+  }
+
+  /* ===== Formateur / video ===== */
+  .video-frame{
+    position:relative; padding-bottom:56.25%; height:0; overflow:hidden;
+    border-radius:var(--radius); background:#000;
+    box-shadow:0 8px 30px rgba(21,59,52,.18);
+  }
+  .video-frame iframe{
+    position:absolute; top:0; left:0; width:100%; height:100%; border:0;
+  }
+
+  /* ===== Modalités pratiques (remplace la carte, format distanciel) ===== */
+  .practical-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:28px;
+    display:grid;
+    gap:18px;
+  }
+  .practical-row{
+    display:flex; gap:14px; align-items:flex-start;
+  }
+  .practical-row svg{
+    width:22px; height:22px; flex-shrink:0; color:var(--teal); margin-top:2px;
+  }
+  .practical-row .label{
+    font-weight:600; color:var(--teal-deep); display:block; margin-bottom:2px;
+  }
+  .practical-row .value{color:var(--ink-soft);}
+  .practical-row .value .todo{
+    color:var(--amber); font-style:italic;
+  }
+
+  /* ===== Downloads ===== */
+  .downloads{
+    display:flex; flex-wrap:wrap; gap:16px;
+  }
+  .dl-btn{
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--teal-deep); color:#fff; text-decoration:none;
+    padding:14px 22px; border-radius:10px; font-weight:600;
+    transition:background .15s ease;
+  }
+  .dl-btn:hover{background:var(--teal);}
+  .dl-btn svg{width:18px; height:18px;}
+  .dl-btn.disabled{
+    background:#e6e9e9; color:#8b9694; cursor:not-allowed; pointer-events:none;
+  }
+
+  /* ===== Footer ===== */
+  footer{
+    background:var(--teal-deep); color:#dcece8;
+    padding:40px 0 32px; margin-top:20px;
+  }
+  footer .wrap{
+    display:flex; flex-wrap:wrap; justify-content:space-between; gap:24px;
+    border-top:1px solid rgba(255,255,255,.15);
+    padding-top:24px;
+  }
+  footer a{color:#fff; text-decoration:underline;}
+  footer .foot-block h3{
+    color:#fff; font-size:1rem; margin-bottom:8px;
+  }
+  footer p{margin:.2em 0; font-size:.95rem;}
+  .todo-note{
+    display:inline-block; margin-top:6px; font-size:.82rem; color:#f0d3b0; font-style:italic;
+  }
+
+  @media (max-width:640px){
+    .prog-item summary{grid-template-columns:32px 1fr; row-gap:8px;}
+    .prog-duration{grid-column:2; justify-self:start;}
+    .prog-body{padding-left:40px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .chevron{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#contenu">Aller au contenu principal</a>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <!-- Placer logo.png à la racine du dépôt -->
+      <img class="logo" src="logo.png" alt="Logo APF France handicap">
+      <span class="org-name">APF France handicap</span>
+    </div>
+    <h1>Sensibilisation au harcèlement moral, aux agissements sexistes et au harcèlement sexuel</h1>
+    <p class="tagline">Je ne suis peut-être pas juriste, mais je sais reconnaître une situation qui m'interroge — et je sais quoi faire.</p>
+
+    <div class="hero-meta">
+      <span class="pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        10 juillet 2026
+      </span>
+      <span class="pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        2 heures
+      </span>
+      <span class="pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        100% distanciel — Microsoft Teams
+      </span>
+      <span class="pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        10 à 25 participants
+      </span>
+    </div>
+  </div>
+</header>
+
+<main id="contenu">
+
+  <section aria-labelledby="intro-title">
+    <div class="wrap">
+      <p class="eyebrow">Pourquoi cette formation</p>
+      <h2 id="intro-title">Reconnaître avant que la situation ne se dégrade</h2>
+      <p class="lead">
+        Dans les collectifs de travail d'APF France handicap, certaines situations de tension, d'agissement sexiste ou de harcèlement
+        peuvent être mal identifiées. Cette sensibilisation, conçue pour toute personne salariée sans prérequis juridique,
+        donne des repères simples pour reconnaître, questionner et relayer une situation préoccupante.
+      </p>
+      <p class="intention">
+        « Faire passer chaque participant de <em>« je pensais savoir »</em> à <em>« je sais reconnaître une situation qui m'interroge,
+        et je sais quoi faire »</em>. »
+      </p>
+    </div>
+  </section>
+
+  <section aria-labelledby="programme-title" style="background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <p class="eyebrow">Déroulé de la session</p>
+      <h2 id="programme-title">Programme, minute par minute</h2>
+      <p class="lead">Une session rythmée de 2 heures, entièrement interactive : quiz, cas pratiques, échanges et engagement final.</p>
+
+      <div class="programme-list">
+
+        <details class="prog-item" open>
+          <summary>
+            <span class="chevron" aria-hidden="true"></span>
+            <span class="prog-num">01</span>
+            <span class="prog-title">Accueil et cadrage</span>
+            <span class="prog-duration">5 min</span>
+          </summary>
+          <div class="prog-body">
+            <p>Présenter le cadre, les objectifs de la session et installer un climat de confiance propice aux échanges.</p>
+            <span class="anim-tag">Slide unique · réactions Teams</span>
+          </div>
+        </details>
+
+        <details class="prog-item">
+          <summary>
+            <span class="chevron" aria-hidden="true"></span>
+            <span class="prog-num">02</span>
+            <span class="prog-title">« Je pensais savoir »</span>
+            <span class="prog-duration">15 min</span>
+          </summary>
+          <div class="prog-body">
+            <p>Faire émerger les représentations initiales et les idées reçues sur le harcèlement et les agissements sexistes.</p>
+            <span class="anim-tag">Quiz Forms · débrief collectif sans jugement</span>
+          </div>
+        </details>
+
+        <details class="prog-item">
+          <summary>
+            <span class="chevron" aria-hidden="true"></span>
+            <span class="prog-num">03</span>
+            <span class="prog-title">Cela arrive aussi chez nous</span>
+            <span class="prog-duration">20 min</span>
+          </summary>
+          <div class="prog-body">
+            <p>Relier les notions vues aux réalités du terrain et au quotidien professionnel, à partir de situations concrètes.</p>
+            <span class="anim-tag">Cas pratiques ESMS/délégations · vote dans le chat</span>
+          </div>
+        </details>
+
+        <details class="prog-item">
+          <summary>
+            <span class="chevron" aria-hidden="true"></span>
+            <span class="prog-num">04</span>
+            <span class="prog-title">Décodeur des situations</span>
+            <span class="prog-duration">15 min</span>
+          </summary>
+          <div class="prog-body">
+            <p>Distinguer harcèlement moral, agissement sexiste, harcèlement sexuel et simple conflit, à l'aide d'exemples et de contre-exemples.</p>
+            <span class="anim-tag">Micro-apport visuel</span>
+          </div>
+        </details>
+
+        <details class="prog-item">
+          <summary>
+            <span class="chevron" aria-hidden="true"></span>
+            <span class="prog-num">05</span>
+            <span class="prog-title">Les 3 questions réflexes</span>
+            <span class="prog-duration">15 min</span>
+          </summary>
+          <div class="prog-body">
+            <p>Transformer les repères théoriques en une conduite simple : repérer, questionner, relayer.</p>
+            <span class="anim-tag">Micro-scénarios · échanges dans le chat</span>
+          </div>
+        </details>
+
+        <details class="prog-item">
+          <summary>
+            <span class="chevron" aria-hidden="true"></span>
+            <span class="prog-num">06</span>
+            <span class="prog-title">Questions-réponses</span>
+            <span class="prog-duration">30 min</span>
+          </summary>
+          <div class="prog-body">
+            <p>Clarifier les situations évoquées et sécuriser les interprétations de chacun.</p>
+            <span class="anim-tag">Questions via micro, chat ou Forms anonyme</span>
+          </div>
+        </details>
+
+        <details class="prog-item">
+          <summary>
+            <span class="chevron" aria-hidden="true"></span>
+            <span class="prog-num">07</span>
+            <span class="prog-title">Conclusion et engagement</span>
+            <span class="prog-duration">20 min</span>
+          </summary>
+          <div class="prog-body">
+            <p>Évaluer la session à chaud et formaliser un petit pas concret, applicable dès le retour en poste.</p>
+            <span class="anim-tag">Forms d'évaluation · mot-clé retenu · engagement individuel</span>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="formateur-title">
+    <div class="wrap">
+      <p class="eyebrow">Avant la session</p>
+      <h2 id="formateur-title">Le mot du formateur</h2>
+      <p class="lead">Une courte présentation pour poser le cadre avant de se retrouver en classe virtuelle.</p>
+      <div class="video-frame">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/ZdAb9Ipn9xs"
+          title="Mot du formateur — présentation de la formation"
+          loading="lazy"
+          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="pratique-title" style="background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <p class="eyebrow">Informations pratiques</p>
+      <h2 id="pratique-title">Se préparer à la session</h2>
+
+      <div class="practical-card">
+        <div class="practical-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <div>
+            <span class="label">Date</span>
+            <span class="value">Vendredi 10 juillet 2026 <span class="todo">(horaire à confirmer)</span></span>
+          </div>
+        </div>
+        <div class="practical-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          <div>
+            <span class="label">Format</span>
+            <span class="value">Classe virtuelle synchrone, 100% à distance sur Microsoft Teams. Aucun déplacement requis.</span>
+          </div>
+        </div>
+        <div class="practical-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></svg>
+          <div>
+            <span class="label">Lien de connexion</span>
+            <span class="value"><span class="todo">à transmettre — sera envoyé par convocation avant la session</span></span>
+          </div>
+        </div>
+        <div class="practical-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+          <div>
+            <span class="label">Accessibilité</span>
+            <span class="value">Sous-titres Teams activables, supports à fort contraste, participation possible par chat, réactions, micro ou questions anonymes via Forms.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="dl-title">
+    <div class="wrap">
+      <p class="eyebrow">Supports</p>
+      <h2 id="dl-title">Documents à télécharger</h2>
+      <p class="lead">Consultez le programme détaillé avant la session, et retrouvez le livret stagiaire après la formation.</p>
+      <div class="downloads">
+        <a class="dl-btn" href="programme.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          Télécharger le programme (PDF)
+        </a>
+        <!-- Bouton désactivé : livret-stagiaire.pdf non fourni pour le moment -->
+        <span class="dl-btn disabled" aria-disabled="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          Livret stagiaire — disponible prochainement
+        </span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-block">
+      <h3>Contact formateur</h3>
+      <!-- Nom transmis : "PATAPON" — à confirmer, et coordonnées (email/téléphone) à compléter -->
+      <p>PATAPON</p>
+      <p class="todo-note">Coordonnées (email / téléphone) à confirmer pour publication</p>
+    </div>
+    <div class="foot-block">
+      <h3>Ressources</h3>
+      <!-- Lien réel à fournir -->
+      <p><a href="#">Politique d'inclusion et de handicap d'APF France handicap</a></p>
+      <p class="todo-note">Lien à confirmer</p>
+    </div>
+    <div class="foot-block">
+      <h3>APF France handicap</h3>
+      <p>Formation de sensibilisation — Qualiopi</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
